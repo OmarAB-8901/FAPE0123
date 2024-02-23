@@ -1,0 +1,210 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+
+   font-family: "Poppins", sans-serif;
+   font-weight: 400;
+   font-style: normal;
+}
+
+.mainContent{
+   height: 93vh !important;
+   overflow-x: hidden;
+   overflow-y: scroll;
+}
+
+.card-header{
+
+   font-size: 17px;
+   font-weight: 500;
+}
+
+.card-body.filters{
+
+   padding-left: 1.5rem;
+}
+
+[class *= "col-md-"]{
+   padding-left: 0 !important;
+}
+
+#app{
+
+   width: 99%;
+}
+
+.navbar{
+
+   width: 101%;
+}
+
+.navbar .container {
+   /* max-width: 1750px; */
+   max-width: 1770px;
+}
+
+.row .container {
+   /* max-width: 1630px; */
+   max-width: 1680px;
+   padding-left: 1rem;
+}
+
+.sidebar-content hr{
+
+   margin: 0.8rem 0 0 -16px;
+}
+
+.sidebar.col-md-2{
+
+   width: 14% !important;
+}
+
+.sidebar.col-md-2 + .col-md-10{
+
+   width: 86% !important;
+}
+
+.sidebar-content .header-sidebar-main{
+
+   text-align: center;
+   margin-left: -2rem;
+}
+
+.sidebar-content .content{
+   /* width: 100%;
+   display: flex;
+   justify-content: space-evenly; */
+   cursor: pointer;
+}
+
+.sidebar-content .content.close .header-sidebar h6::before{
+   content: '+';
+   transform: translateY(-50%);
+}
+
+.sidebar-content .content .header-sidebar h6::before{
+   content: '-';
+   transform: translateY(-50%);
+}
+
+.sidebar-content .content.close .body-sidebar{
+   /* height: 0;
+   cursor: pointer; */
+   /* display: none; */
+   /* overflow: hidden;
+   transition: 1.5s; */
+
+   position: relative;
+   background: white;
+   height: 0;
+   font-size: 20px;
+   text-align: justify;
+   width: 780px;
+   overflow: hidden;
+   transition: 1.5s;
+}
+
+/* .sidebar-content .header-sidebar{
+   margin-left: 0.5rem;
+} */
+
+.sidebar-content .body-sidebar{
+
+   display: flex;
+   flex-direction: column;
+   margin-top: -0.6rem;
+}
+
+.sidebar-content .body-sidebar a{
+
+   margin-left: 1rem;
+}
+
+.login-page{
+
+   margin-left: -14rem;
+   margin-top: 3rem !important;
+}
+
+.sidebar-content{
+   
+   /* border: 1px solid #000; */
+   border: 1px solid rgb(0, 0, 0, 0.4);
+   border-radius: 0.7rem;
+   /* border-top: 2px solid #000;
+   border-right: 2px solid #000; */
+   height: 53rem;
+   padding-left: 1rem;
+   margin: 1rem 0 0 1.5rem;
+}
+
+/* Modulo de graficas */
+
+.doughnutsCharts{
+
+   display: flex;
+   justify-content: space-between;
+}
+
+#chartProduccion{
+
+   height: 34rem !important;
+   width: 100% !important;
+}
+
+.groupButtons{
+
+   display: flex;
+   gap: 0.5rem;
+   justify-content: center;
+   flex-direction: row-reverse;
+}
+
+
+.groupFilters{
+
+   margin-top: 1rem !important;
+   display: flex;
+   gap: 1rem;
+   white-space: nowrap;
+}
+
+table thead tr th {
+   white-space: nowrap;
+   font-weight: 500;
+   text-align: center;
+}
+
+table tbody tr td {
+   white-space: nowrap;
+   text-align: center;
+}
+
+.horizontalScroll{
+
+   width: 74.5rem;
+   overflow-x: scroll;
+   overflow-y: hidden;
+   padding: 0.5;
+}
+
+.verticalScroll{
+
+   height: 52rem;
+   overflow-x: hidden;
+   overflow-y: scroll;
+}
+
+/* .fullScroll{
+
+   width: 72rem;
+   height: 52rem;
+   overflow-x: scroll;
+   overflow-y: scroll;
+} */
+
+.card.abortKgs{
+
+   height: 100%;
+}
