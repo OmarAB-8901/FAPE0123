@@ -5,14 +5,14 @@ namespace App\Http\Controllers\Mantenimiento;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class MantenimientoGraphController extends Controller
+class MantenimientoHistoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('mantenimiento/graph');
+        return view('mantenimiento/maintenanceHistory');
     }
 
     /**

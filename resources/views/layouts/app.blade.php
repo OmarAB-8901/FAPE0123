@@ -14,7 +14,10 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <link rel="stylesheet" href="/css/main.css">
-    @yield('cssSection')
+    <link rel="stylesheet" href="/css/sidebar.css">
+    <link rel="stylesheet" href="/css/filterModule.css">
+
+    @yield('css_section')
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -93,6 +96,10 @@
 
     <script src="/js/chartjs/main.js"></script>    
     <script src="/js/main.js"></script>
-    @yield('jsSection')
+    <script src="/js/sidebar.js"></script>
+    <script src="/js/filterModule.js"></script>
+    
+    @yield('js_section')
+
 </body>
 </html>

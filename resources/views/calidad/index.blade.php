@@ -132,3 +132,12 @@
     </div>
 </div>
 @endsection
+
+@section('css_section')
+    <!-- <link rel="stylesheet" href="/css/chartjs/main.css"></link> -->
+@endsection
+
+@section('js_section')
+    <script src="/js/calidad/andon.js"></script>
+    <script src="/js/calidad/graphics.js"></script>
+@endsection

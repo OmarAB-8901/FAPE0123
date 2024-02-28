@@ -1,0 +1,13 @@
+/* Modulo de graficas */
+
+.doughnutsCharts{
+
+   display: flex;
+   justify-content: space-between;
+}
+
+#chartProduccion{
+
+   height: 34rem !important;
+   width: 100% !important;
+}

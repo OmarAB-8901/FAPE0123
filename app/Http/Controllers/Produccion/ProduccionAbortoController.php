@@ -5,14 +5,14 @@ namespace App\Http\Controllers\Produccion;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ProduccionController extends Controller
+class ProduccionAbortoController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('produccion/index');
+        return view('produccion/abortos');
     }
 
     /**

@@ -5,15 +5,14 @@ namespace App\Http\Controllers\Calidad;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class CalidadGraphController extends Controller
+class CalidadHistoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('calidad/graph');
-        //
+        return view('calidad/qualityHistory');
     }
 
     /**

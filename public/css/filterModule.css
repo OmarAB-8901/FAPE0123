@@ -1,0 +1,10 @@
+.typeSearch .col-md-12{
+
+   display: flex;
+   justify-content: space-around;
+}
+
+.row.hidden{
+
+   display: none;
+}
