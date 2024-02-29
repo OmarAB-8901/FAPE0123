@@ -7,19 +7,19 @@
             <div class="card shadow">
                 <div class="card-header">{{ __('Calidad') }}</div>
 
-                <div class="card-body">
+                <div class="card-body bg-white hasTable">
                 
-                    <table class="table table-striped">
+                    <table class="table table-hover table-sm">
                         <thead>
                             <tr>
                                 <th>Evento</th>
-                                <th>TIPO DE DATO</th>
-                                <th>Valor Referencia</th>
+                                <th>Tipo de dato</th>
+                                <th>Valor referencia</th>
                                 <th>Valor Real</th>
                                 <th>PLC</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="table-group-divider">
                             <tr>
                                 <td>Humedad en frito (In FL-710)</td>
                                 <td>FLOTANTE</td>
@@ -134,10 +134,10 @@
 @endsection
 
 @section('css_section')
-    <!-- <link rel="stylesheet" href="/css/chartjs/main.css"></link> -->
+    <link rel="stylesheet" href="/css/calidad/main.css"></link>
 @endsection
 
 @section('js_section')
     <script src="/js/calidad/andon.js"></script>
-    <script src="/js/calidad/graphics.js"></script>
+    <!-- <script src="/js/calidad/graphics.js"></script> -->
 @endsection

@@ -8,7 +8,7 @@
             <div class="card shadow">
                 <div class="card-header">{{ __('Produccion') }}</div>
 
-                <div class="card-body">
+                <div class="card-body bg-white">
                     
 
                     <div class="doughnutsCharts">
@@ -33,7 +33,7 @@
             <div class="card shadow abortKgs">
                 <div class="card-header">{{ __('Abortos Kilos') }}</div>
 
-                <div class="card-body horizontalScroll">
+                <div class="card-body hasTable   bg-white horizontalScroll">
                     
                     <table class="table table-striped tableAbortKgs">
                         <thead>

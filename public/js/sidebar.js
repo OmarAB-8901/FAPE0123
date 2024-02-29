@@ -2,7 +2,6 @@
 document.querySelectorAll('.sidebar-content .content .body-sidebar .inner_menu .header-sidebar').forEach(elem => {
 
   elem.addEventListener('click', () => {
-
     document.querySelectorAll('.sidebar-content .content:not(.inner_menu)')[1].querySelector('.body-sidebar').style = "height: auto";
   });
 });
@@ -10,14 +9,14 @@ document.querySelectorAll('.sidebar-content .content .body-sidebar .inner_menu .
 document.querySelectorAll('.sidebar-content .content:not(.inner_menu)')[1].querySelector('.header-sidebar').addEventListener('click', () => {
 
   let content = document.querySelectorAll('.sidebar-content .content:not(.inner_menu)')[1];
-  
-  content.querySelectorAll('.inner_menu.content:not(.close').forEach(elem => { elem.classList.toggle('close') });
   content.querySelector('.body-sidebar').style = "height: 10.3vh";
 });
 
 document.querySelectorAll('.sidebar-content .content .header-sidebar').forEach((elem, i) => {
 
   elem.addEventListener('click', (header) => {
+
+    closeAllElementsMenu();
   
     let content = header.srcElement.parentElement.parentElement;
     setTimeout(() => {
@@ -26,10 +25,10 @@ document.querySelectorAll('.sidebar-content .content .header-sidebar').forEach((
   }); 
 });
 
-//  let closeAllElementsMenu = () => {
+ let closeAllElementsMenu = () => {
  
-//    document.querySelectorAll('.sidebar-content .content:not(.close)').forEach(elem => {
+   document.querySelectorAll('.sidebar-content .content:not(.close)').forEach(elem => {
  
-//      console.log(elem);
-//    });
-//  };
+    //  elem.classList.toggle('close');
+   });
+ };

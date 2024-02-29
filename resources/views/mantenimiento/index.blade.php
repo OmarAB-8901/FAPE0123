@@ -7,9 +7,9 @@
             <div class="card shadow">
                 <div class="card-header">{{ __('Mantenimiento') }}</div>
 
-                <div class="card-body">
+                <div class="card-body hasTable bg-white">
                     
-                    <table class="table table-striped tableMaintenance">
+                    <table class="table table-hover table-sm tableMaintenance">
                         <thead>
                             <tr>
                                 <th>Equipo L1</th>
@@ -17,10 +17,10 @@
                                 <th>MTBF</th>
                                 <th>MTTF</th>
                                 <th>TM x L1</th>
-                                <th>Horas Negras - paro programado(Nuevo campo)</th>
+                                <th>Horas Negras</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="table-group-divider">
                             <tr>
                                 <td>DRY MIX</td>
                                 <td>-</td>
@@ -141,7 +141,7 @@
 @endsection
 
 @section('css_section')
-    <!-- <link rel="stylesheet" href="/css/chartjs/main.css"></link> -->
+    <link rel="stylesheet" href="/css/mantenimiento/main.css"></link>
 @endsection
 
 @section('js_section')

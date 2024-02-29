@@ -13,20 +13,31 @@
    overflow-y: scroll;
 }
 
-.card-body{
-
-   background-color: #fff;
-}
-
 .card-header{
 
    font-size: 17px;
    font-weight: 500;
+   /* background-color: #034a93 !important;
+   color: #fff !important; */
+}
+
+.card-body{
+
+   border-bottom-left-radius: 12px;
+   border-bottom-right-radius: 12px;
+}
+
+.card-body.hasTable{
+   padding: 0.5rem 0.3rem 0.3rem 0.3rem !important;
 }
 
 .card-body.filters{
 
    padding-left: 1.5rem;
+}
+
+.card-body table{
+   margin-bottom: 0 !important;
 }
 
 [class *= "col-md-"]{
@@ -44,8 +55,12 @@
 }
 
 .navbar .container {
-   /* max-width: 1750px; */
-   max-width: 1770px;
+   max-width: 1840px;
+}
+
+.navbar-brand{
+
+   font-weight: 500;
 }
 
 .row .container {
@@ -80,6 +95,7 @@
 table thead tr th {
    white-space: nowrap;
    font-weight: 500;
+   font-size: 16px;
    text-align: center;
 }
 
@@ -95,13 +111,6 @@ table tbody tr td {
    overflow-y: hidden;
 }
 
-/* .horizontalScroll.report{
-
-   width: 83.5vw;
-   overflow-x: scroll;
-   overflow-y: hidden;
-} */
-
 .verticalScroll{
 
    height: 52rem;
@@ -109,15 +118,3 @@ table tbody tr td {
    overflow-y: scroll;
 }
 
-/* .fullScroll{
-
-   width: 72rem;
-   height: 52rem;
-   overflow-x: scroll;
-   overflow-y: scroll;
-} */
-
-.card.abortKgs{
-
-   height: 100%;
-}

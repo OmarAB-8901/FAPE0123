@@ -9,10 +9,13 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <link rel="stylesheet" href="/css/bootstrap/bootstrapIcons.css">
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap_5-3-3.min.css">
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-
+    
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/sidebar.css">
     <link rel="stylesheet" href="/css/filterModule.css">
@@ -37,7 +40,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
+                         
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -93,6 +96,8 @@
             </div>
         </div>
     </div>
+
+    <!-- <script src="/js/bootstrap/bootstrap_5-3-3.min.js"></script> -->
 
     <script src="/js/chartjs/main.js"></script>    
     <script src="/js/main.js"></script>

@@ -1,13 +1,13 @@
 <div class="card">
 	<div class="card-header">{{ __('Filtros') }}</div>
 
-	<div class="card-body filters">
+	<div class="card-body bg-white filters">
 
 		<div class="row">
 
 			<div class="col-md-6">
 				<label for="">Seleccione una linea</label>
-				<select name="" id="" class="form-select">
+				<select name="" id="" class="form-select bg-white">
 					<option value="">Linea 1</option>
 					<option value="">Linea 2</option>
 					<option value="">Linea 3</option>
@@ -17,7 +17,7 @@
 
 			<div class="col-md-6">
 				<label for="">Seleccione un lado</label>
-				<select class="form-select" name="" id="">
+				<select class="form-select bg-white" name="" id="">
 					<option value="">Lado A</option>
 					<option value="">Lado B</option>
 					<option value="">Ambos</option>
@@ -48,7 +48,7 @@
 						<div class="col-md-6">
 
 							<label for="" class="mt-2">Hora Inicio</label>
-							<input type="time" name="" id="" class="form-control">
+							<input type="time" name="" id="" class="form-control bg-white">
 
 						</div>
 						<div class="col-md-6">

@@ -8,7 +8,7 @@
       <div class="card shadow">
         <div class="card-header">{{ __('Produccion') }}</div>
 
-        <div class="card-body">
+        <div class="card-body bg-white">
 
 
           <div class="doughnutsCharts">
@@ -35,9 +35,9 @@
       <div class="card shadow abortKgs">
         <div class="card-header">{{ __('Abortos Kilos') }}</div>
 
-        <div class="card-body horizontalScroll">
+        <div class="card-body bg-white hasTable horizontalScroll">
 
-          <table class="table table-striped tableAbortKgs">
+          <table class="table table-hover table-sm tableAbortKgs">
             <thead>
               <tr>
                 <th>1</th>
@@ -47,7 +47,7 @@
                 <th>5</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody class="table-group-divider">
               <tr>
                 <td>1</td>
                 <td>2</td>
