@@ -38,27 +38,42 @@
 
 .sidebar-content .content.close .header-sidebar h6::before,
 .sidebar-content .content.close .header-sidebar span::before{
-   /* content: '+'; */
-   content: "\f285";
+   /*content: "\f231";*/ /* This icon is filled */
+   content: "\f234"; /* This icon is not filled */
    transform: translateY(-50%);
    display: inline;
    padding-right: 0.15rem;
+   font-size: 18px;
 }
 
 .sidebar-content .content .header-sidebar h6::before,
 .sidebar-content .content .header-sidebar span::before{
-   content: "\f282";
+   /*content: "\f229";*/ /* This icon is filled */
+   content: "\f22c"; /* This icon is not filled */
    transform: translateY(-50%);
    display: inline;
    padding-right: 0.15rem;
+   font-size: 18px;
 }
 
-/* .sidebar-content .content .body-sidebar{
+.sidebar-content .content .body-sidebar a::before{
    
-   position: relative;
-   overflow: hidden;
-   transition: 0.8s;
-} */
+   content: "\F28A";
+   transform: translateY(-50%);
+   display: inline;
+   padding-right: 0.15rem;
+   /* font-size: 13px; */
+}
+
+.sidebar-content .content .body-sidebar a.selected::before{
+   
+   /* content: "\F270"; */
+   content: "\F26B";
+   transform: translateY(-50%);
+   display: inline;
+   padding-right: 0.15rem;
+   /* font-size: 13px; */
+}
 
 .sidebar-content .content:not(.close) .body-sidebar{
    
@@ -128,8 +143,8 @@
 
 .sidebar-content .body-sidebar .inner_menu a{
 
-   margin-left: -2.5rem;
-   padding-left: 3rem;
+   margin-left: -2.8rem;
+   padding-left: 2rem;
 }
 
 .sidebar-content .body-sidebar .inner_menu{

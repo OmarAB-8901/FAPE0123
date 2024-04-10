@@ -145,6 +145,5 @@
 @endsection
 
 @section('js_section')
-    <script src="/js/mantenimiento/andon.js"></script>
-    <script src="/js/mantenimiento/graphics.js"></script>
+    <script src="/js/mantenimiento/andon.js" type="module"></script>
 @endsection

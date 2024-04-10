@@ -54,7 +54,7 @@
 						<div class="col-md-6">
 
 							<label for="" class="mt-2">Hora fin</label>
-							<input type="time" name="" id="" class="form-control">
+							<input type="time" name="" id="" class="form-control bg-white">
 
 						</div>
 					</div>
@@ -63,13 +63,13 @@
 						<div class="col-md-6">
 
 							<label for="" class="mt-2">Fecha Inicio</label>
-							<input type="date" name="" id="" class="form-control">
+							<input type="date" name="" id="" class="form-control bg-white">
 
 						</div>
 						<div class="col-md-6">
 
 							<label for="" class="mt-2">Fecha fin</label>
-							<input type="date" name="" id="" class="form-control">
+							<input type="date" name="" id="" class="form-control bg-white">
 
 						</div>
 					</div>
@@ -78,7 +78,7 @@
 						<div class="col-md-12">
 
 							<label for="" class="mt-2">Seleccione mes</label>
-							<input type="month" name="" id="" class="form-control">
+							<input type="month" name="" id="" class="form-control bg-white">
 
 						</div>
 					</div>

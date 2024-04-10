@@ -28,7 +28,8 @@
 }
 
 .card-body.hasTable{
-   padding: 0.5rem 0.3rem 0.3rem 0.3rem !important;
+   /* padding: 0.5rem 0.3rem 0.3rem 0.3rem !important; */
+   padding: 0.5rem !important;
 }
 
 .card-body.filters{
@@ -72,8 +73,8 @@
 
 .login-page{
 
-   margin-left: -14rem;
-   margin-top: 3rem !important;
+   margin-left: -11rem;
+   margin-top: 2rem !important;
 }
 
 .groupButtons{
