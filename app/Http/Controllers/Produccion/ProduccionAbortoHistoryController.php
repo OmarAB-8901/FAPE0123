@@ -62,4 +62,14 @@ class ProduccionAbortoHistoryController extends Controller
     {
         //
     }
+
+    /**
+     * Function to obtain data of the history of aborto
+    */
+    public function obtainDataHistory(Request $request){
+
+        $filters = $request['filters'];
+
+        return $filters;
+    }
 }

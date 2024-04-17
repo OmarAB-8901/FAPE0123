@@ -1,23 +1,35 @@
 
-import  tagsToObtainMaintenanceData from "./tagsMaintenance.js";
-import dataNodeRedServer from "./../dataNodeRedServer.js";
+import dataMaintenance from "./tagsMaintenance.js";
+import dataNodeRedServer from "../dataProject.js";
 
-// console.log(tagsToObtainMaintenanceData);
+let tagsToObtainMaintenanceData = dataMaintenance.tags;
+let tbodyTable = dataMaintenance.dataTable;
+
+let body = document.querySelector('.tableMaintenance tbody');
+let tbody = "";
+tbodyTable.forEach(elem => {
+   
+   tbody += `<tr class="${elem.class}">`;
+   tbody += `<td class="equipo">${elem.equipo}</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td>`;
+   tbody += "</tr>";
+});
+body.innerHTML = tbody;
 
 (() => {
 
-   // setInterval( () => {
-   setTimeout( () => {
+   setInterval( () => {
       
-      // let dataMaintenance = [];
-      tagsToObtainMaintenanceData.tags.forEach(async elem => {
+      tagsToObtainMaintenanceData.forEach(async elem => {
          
          let tagToSend = (elem[0].tag).toString();
-         let dataObtained = await fetch(`${dataNodeRedServer.url}/obtainDataTags?tag=${tagToSend}`);
-         // dataMaintenance.push(dataObtained);
-
-         let rowData = document.querySelector(elem[1]);
+         let line = document.querySelector('.lineSelect').value;
+         let side = document.querySelector('.sideSelect').value;
+         let dataObtained = await fetch(`${dataNodeRedServer.url}/sbl_tags/readTagData?tag=${tagToSend}&line=${line}&side=${side}`).then(json => json.json());
+         
+         document.querySelectorAll(`.${elem[1]} td:not(.equipo)`).forEach((elem, i) => {
+            elem.innerText = dataObtained.data[i];
+         });
       });
       
-   }, 2000);
+   }, 20000);
 })();

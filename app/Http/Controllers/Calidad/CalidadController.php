@@ -12,7 +12,7 @@ class CalidadController extends Controller
      */
     public function index()
     {
-        return view('calidad/index');
+        return view('calidad/andon');
     }
 
     /**

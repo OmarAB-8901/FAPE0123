@@ -10,17 +10,9 @@
 
         <div class="card-body bg-white">
 
+          <div class="doughnutsCharts"></div>
+          <div><canvas id="chartProduction"></canvas></div>
 
-          <div class="doughnutsCharts">
-            <div style="width: 14%;"><canvas id="chartDoughnut_1"></canvas></div>
-            <div style="width: 14%;"><canvas id="chartDoughnut_2"></canvas></div>
-            <div style="width: 14%;"><canvas id="chartDoughnut_3"></canvas></div>
-            <div style="width: 14%;"><canvas id="chartDoughnut_4"></canvas></div>
-            <!-- <div style="width: 14%;"><canvas id="chartDoughnut_5"></canvas></div>    
-                        <div style="width: 14%;"><canvas id="chartDoughnut_6"></canvas></div>     -->
-          </div>
-
-          <div><canvas id="chartProduccion"></canvas></div>
         </div>
       </div>
     </div>

@@ -12,7 +12,7 @@ class MantenimientoController extends Controller
      */
     public function index()
     {
-        return view('mantenimiento/index');
+        return view('mantenimiento/andon');
     }
 
     /**

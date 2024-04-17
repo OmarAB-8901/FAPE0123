@@ -6,21 +6,21 @@
 		<div class="row">
 
 			<div class="col-md-6">
-				<label for="">Seleccione una linea</label>
-				<select name="" id="" class="form-select bg-white">
-					<option value="">Linea 1</option>
-					<option value="">Linea 2</option>
-					<option value="">Linea 3</option>
+				<label for="lineSelect">Seleccione una linea</label>
+				<select name="" id="lineSelect" class="form-select bg-white lineSelect">
+					<option value="1">Linea 1</option>
+					<option value="2">Linea 2</option>
+					<option value="3">Linea 3</option>
 					<!-- Obtener informacion de catalogo -->
 				</select>
 			</div>
 
 			<div class="col-md-6">
-				<label for="">Seleccione un lado</label>
-				<select class="form-select bg-white" name="" id="">
-					<option value="">Lado A</option>
-					<option value="">Lado B</option>
-					<option value="">Ambos</option>
+				<label for="sideSelect">Seleccione un lado</label>
+				<select class="form-select bg-white sideSelect" name="" id="sideSelect">
+					<option value="a">Lado A</option>
+					<option value="b">Lado B</option>
+					<option value="z">Ambos</option>
 				</select>
 			</div>
 
@@ -47,14 +47,14 @@
 					<div class="row search searchHours">
 						<div class="col-md-6">
 
-							<label for="" class="mt-2">Hora Inicio</label>
-							<input type="time" name="" id="" class="form-control bg-white">
+							<label for="startHour" class="mt-2">Hora Inicio</label>
+							<input type="time" name="" id="startHour" class="form-control bg-white startHour" value="00:00">
 
 						</div>
 						<div class="col-md-6">
 
-							<label for="" class="mt-2">Hora fin</label>
-							<input type="time" name="" id="" class="form-control bg-white">
+							<label for="endHour" class="mt-2">Hora fin</label>
+							<input type="time" name="" id="endHour" class="form-control bg-white endHour" value="23:59">
 
 						</div>
 					</div>
@@ -62,14 +62,14 @@
 					<div class="row search searchDays hidden">
 						<div class="col-md-6">
 
-							<label for="" class="mt-2">Fecha Inicio</label>
-							<input type="date" name="" id="" class="form-control bg-white">
+							<label for="startDate" class="mt-2">Fecha Inicio</label>
+							<input type="date" name="" id="startDate" class="form-control bg-white startDate">
 
 						</div>
 						<div class="col-md-6">
 
-							<label for="" class="mt-2">Fecha fin</label>
-							<input type="date" name="" id="" class="form-control bg-white">
+							<label for="endDate" class="mt-2">Fecha fin</label>
+							<input type="date" name="" id="endDate" class="form-control bg-white endDate">
 
 						</div>
 					</div>
@@ -77,9 +77,10 @@
 					<div class="row search searchMonth hidden">
 						<div class="col-md-12">
 
-							<label for="" class="mt-2">Seleccione mes</label>
-							<input type="month" name="" id="" class="form-control bg-white">
+							<label for="month" class="mt-2">Seleccione mes</label>
+							<input type="month" name="" id="startMonth" class="form-control bg-white startMonth">
 
+							<input type="hidden" name="" id="endMonth" class="form-control bg-white endMonth" value="endMonth">
 						</div>
 					</div>
 				</div>

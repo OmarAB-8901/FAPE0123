@@ -119,3 +119,11 @@ table tbody tr td {
    overflow-y: scroll;
 }
 
+.btn-info.btn-sm,
+.btn-info.btn-sm:hover{
+   color: #fff;
+}
+
+.btn-outline-info.btn-sm:hover{
+   color: #fff;
+}

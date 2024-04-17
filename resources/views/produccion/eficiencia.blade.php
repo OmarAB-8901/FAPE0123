@@ -162,6 +162,5 @@
 @endsection
 
 @section('js_section')
-    <script src="/js/produccion/andon.js"></script>
-    <script src="/js/produccion/graphics.js"></script>
+    <script src="/js/produccion/eficiencia/andon.js"></script>
 @endsection

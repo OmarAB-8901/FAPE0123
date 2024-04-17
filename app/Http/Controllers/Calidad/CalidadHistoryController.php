@@ -62,4 +62,14 @@ class CalidadHistoryController extends Controller
     {
         //
     }
+
+    /**
+     * Function to obtain data of the history of quality
+    */
+    public function obtainDataHistory(Request $request){
+
+        $filters = $request['filters'];
+
+        return $filters;
+    }
 }

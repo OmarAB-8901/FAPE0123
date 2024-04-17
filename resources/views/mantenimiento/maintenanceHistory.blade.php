@@ -1,4 +1,4 @@
-@extends('layouts.sidebar')
+ @extends('layouts.sidebar')
 
 @section('content')
 <div class="container">
@@ -9,16 +9,10 @@
                 <div class="card-header">{{ __('Produccion') }}</div>
 
                 <div class="card-body bg-white">
-                    
 
-                    <div class="doughnutsCharts">
-                        <div style="width: 14%;"><canvas id="chartDoughnut_1"></canvas></div>
-                        <div style="width: 14%;"><canvas id="chartDoughnut_2"></canvas></div>
-                        <div style="width: 14%;"><canvas id="chartDoughnut_3"></canvas></div>
-                        <div style="width: 14%;"><canvas id="chartDoughnut_4"></canvas></div>
-                    </div>
+                    <div class="doughnutsCharts"></div>
+                    <div><canvas id="chartProduction"></canvas></div>
                     
-                    <div><canvas id="chartProduccion"></canvas></div>
                 </div>
             </div>
         </div>
@@ -35,25 +29,18 @@
 
                 <div class="card-body hasTable   bg-white horizontalScroll">
                     
-                    <table class="table table-striped tableAbortKgs">
+                    <table class="table table-striped tableMaintenance">
                         <thead>
                             <tr>
-                                <th>1</th>
-                                <th>2</th>
-                                <th>3</th>
-                                <th>4</th>
-                                <th>5</th>
+                                <th>Equipo L1</th>
+                                <th>MTTR</th>
+                                <th>MTBF</th>
+                                <th>MTTF</th>
+                                <th>TM x L1</th>
+                                <th>Horas Negras</th>
                             </tr>
                         </thead>
-                        <tbody>
-                           <tr>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
-                           </tr>
-                        </tbody>
+                        <tbody></tbody>
                     </table>
 
                 </div>
@@ -67,9 +54,9 @@
 
 @section('css_section')
     <link rel="stylesheet" href="/css/chartjs/main.css"></link>
+    <link rel="stylesheet" href="/css/mantenimiento/main.css"></link>
 @endsection
 
 @section('js_section')
-    <script src="/js/produccion/history.js"></script>
-    <script src="/js/produccion/graphics.js"></script>
+    <script src="/js/mantenimiento/history.js" type="module"></script>
 @endsection

@@ -1,7 +1,7 @@
 ( () => {
 
   let timeOut_Session = Number(window.sessionStorage.getItem('SESSION_LIFETIME'));
-  timeOut_Session = (timeOut_Session * 60000);
+  timeOut_Session = timeOut_Session == 0 ? (10 * 60000) : (timeOut_Session * 60000);
 
   let session_lifetime = setTimeout(() => { window.location.reload() }, timeOut_Session);
 
@@ -14,6 +14,10 @@
    
   if(locationSelected == 'andon'){
     document.querySelector('.modulesFilterHistory').style = "display: none;";
-    document.querySelector('.btn-download').style = "display: none;";
+    document.querySelector('.btn-search').style = "display: none;";
+    // document.querySelector('.btn-download').style = "display: none;";
   }
+
+  document.querySelector('.btn-download').style = "display: none;";
+  
 })();
