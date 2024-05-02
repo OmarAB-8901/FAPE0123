@@ -2,6 +2,19 @@ export default{
    
    tags: [
       [{tag: "ns=2;s=[PLC_ANDON]FIFO_WC_Event[0].Read", type: "String"}, 'humedad'],
+      [{tag: "ns=2;s=[PLC_ANDON]FIFO_WC_Event[0].Read", type: "String"}, 'emulsificante_activa'],
+      [{tag: "ns=2;s=[PLC_ANDON]FIFO_WC_Event[0].Read", type: "String"}, 'emulsificante_lectura'],
+      [{tag: "ns=2;s=[PLC_ANDON]FIFO_WC_Event[0].Read", type: "String"}, 'temp_freidor'],
+      [{tag: "ns=2;s=[PLC_ANDON]FIFO_WC_Event[0].Read", type: "String"}, 'residencia_freidor'],
+      [{tag: "ns=2;s=[PLC_ANDON]FIFO_WC_Event[0].Read", type: "String"}, 'freeders'],
+      [{tag: "ns=2;s=[PLC_ANDON]FIFO_WC_Event[0].Read", type: "String"}, 'flake_activa'],
+      [{tag: "ns=2;s=[PLC_ANDON]FIFO_WC_Event[0].Read", type: "String"}, 'flake_lectura'],
+      [{tag: "ns=2;s=[PLC_ANDON]FIFO_WC_Event[0].Read", type: "String"}, 'minors_activa'],
+      [{tag: "ns=2;s=[PLC_ANDON]FIFO_WC_Event[0].Read", type: "String"}, 'minors_lectura'],
+      [{tag: "ns=2;s=[PLC_ANDON]FIFO_WC_Event[0].Read", type: "String"}, 'sucrosa_activa'],
+      [{tag: "ns=2;s=[PLC_ANDON]FIFO_WC_Event[0].Read", type: "String"}, 'sucrosa_lectura'],
+      [{tag: "ns=2;s=[PLC_ANDON]FIFO_WC_Event[0].Read", type: "String"}, 'pavan_activo'],
+      [{tag: "ns=2;s=[PLC_ANDON]FIFO_WC_Event[0].Read", type: "String"}, 'pavan_lectura'],
    ],
 
    dataTable: [

@@ -16,8 +16,7 @@
     document.querySelector('.modulesFilterHistory').style = "display: none;";
     document.querySelector('.btn-search').style = "display: none;";
     // document.querySelector('.btn-download').style = "display: none;";
-  }
-
-  document.querySelector('.btn-download').style = "display: none;";
-  
+  } else if(locationSelected == 'history'){
+    document.querySelector('.btn-download').style = "display: none;";
+  }  
 })();

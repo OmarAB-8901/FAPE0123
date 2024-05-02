@@ -1,44 +1,117 @@
 import dataMaintenance from "./tagsAborto.js";
-import dataProject from "../dataProject.js";
+import dataProject from "../../dataProject.js";
 
-dataProject.initCharts();
+dataProject.initCharts('bar');
 
 let tbodyTable = dataMaintenance.dataTable;
 
-let body = document.querySelector('.tableAborto tbody');
-let tbody = "";
-tbodyTable.forEach(elem => {
+let printTable = () => {
 
-  tbody += `<tr class="${elem.class}">`;
-  tbody += `<td class="nameElem">${elem.event}</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td>`;
-  tbody += "</tr>";
-});
-body.innerHTML = tbody;
+  let body = document.querySelector('.tableAbortKgs tbody');
+  let tbody = "";
+  tbodyTable.forEach(elem => {
+
+    tbody += `<tr class="${elem.class}">`;
+    tbody += `<td class="equipo">${elem.equipo}</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td>`;
+    tbody += "</tr>";
+  });
+  body.innerHTML = tbody;
+}
+
+// Temporal function
+let randomData = () => {
+
+  let data = [];
+
+  for(let i=0; i<10; i++){7
+    data.push(( (Math.random() * 900)+1).toFixed() );
+  }
+
+  return data;
+};
+// END
+
+let obtainData = async () => {
+
+  let colorsChart = ['56, 102, 242', '102, 102, 242', '56, 102, 102'];
+
+  let dataFilters = {
+    line: document.querySelector('#lineSelect').value,
+    side: document.querySelector('#sideSelect').value,
+    searchBy: {
+      by: dataProject.obtainBy(),
+      init: document.querySelector(`.start${dataProject.obtainBy()}`).value,
+      end: document.querySelector(`.end${dataProject.obtainBy()}`).value,
+    },
+  };
+
+  // let dataConsulted = await fetch(`/maintenance/obtaindatahistory?filters=${JSON.stringify(dataFilters)}`).then(json => json.json()).then(data => data);
+
+  let dataForChart = [];
+  switch (dataFilters.line) {
+    case '1':
+    case '2':
+    case '3':
+      let data = {
+        label: 'Linea ' + dataFilters.line,
+        data: randomData(),
+        borderColor: 'rgba(56, 102, 242, 0.6)',
+        backgroundColor: 'rgba(56, 102, 242, 0.5)',
+        borderWidth: 2,
+        borderRadius: 5,
+        borderSkipped: false,
+      }
+      dataForChart.push(data);
+      break;
+    default:
+      for (let i = 1; i <= 3; i++) {
+        dataForChart.push({
+          label: 'Linea ' + i,
+          data: randomData(),
+          borderColor: `rgba(${colorsChart[i - 1]}, 0.7)`,
+          backgroundColor: `rgba(${colorsChart[i - 1]}, 0.5)`,
+          borderWidth: 2,
+          borderRadius: 5,
+          borderSkipped: false,
+        });
+      }
+  }
+
+  return dataForChart;
+}
+
+let initiateChartsProd = async () => {
+
+  let labels = () => { let labels = []; for (let i = 1; i <= 10; i++) { labels.push(`Carril ${i}`); } return labels; };
+
+  // Bar Chart
+  dataProject.jsonDataCharts.barChart.type = 'bar';
+  dataProject.jsonDataCharts.barChart.enableTitleChart = true;
+  dataProject.jsonDataCharts.barChart.titleChart = 'Abortos Linea ' + (document.querySelector('#sideSelect').value).toUpperCase();
+  dataProject.jsonDataCharts.barChart.labels = labels();
+  dataProject.jsonDataCharts.barChart.dataSet = await obtainData();
+
+  dataProject.printBarChart(dataProject.jsonDataCharts.barChart);
+};
+
+let updateChart = async () => {
+
+  // Bar Chart
+  dataProject.jsonDataCharts.barChart.dataSet = await obtainData();
+  dataProject.updateBarChart(dataProject.jsonDataCharts.barChart);
+};
 
 (() => {
 
+  initiateChartsProd();
+
   document.querySelector('.btn-search').addEventListener('click', async () => {
 
-    dataProject.doughnutCharts.forEach(chart => { chart.destroy(); });
-    dataProject.lineChart.destroy();
-
-    let dataCharts = {
-      lineChart: {
-        type: 'line',
-        labels: [],
-        dataSet: []
-      },
-      doughnutChart: {
-        totCharts: 5,
-        // type: 'doughnut',
-        type: 'doughnut',
-        dataSet: [[90, 1], [90, 5], [90, 1], [90, 9], [90, 9], [90, 9]],
-        namesDoughnutsChart: ['MTTR', 'MTBF', 'MTTF', 'TX x L1', 'Horas Negras'],
-        colorsDoughnutsChart: [['rgb(54, 162, 235)', 'rgb(255, 99, 132)'], ['rgb(54, 162, 235)', 'rgb(255, 99, 132)'], ['rgb(54, 162, 235)', 'rgb(255, 99, 132)'], ['rgb(54, 162, 235)', 'rgb(255, 99, 132)'], ['rgb(54, 162, 235)', 'rgb(255, 99, 132)']]
-      }
-    };
-
-    dataProject.printsCharts(dataCharts, true);
+    printTable();
+    updateChart();
   });
+
+  document.querySelector('#lineSelect').addEventListener('change', () => { initiateChartsProd(); });
+  document.querySelector('#sideSelect').addEventListener('change', () => { initiateChartsProd(); });
 
 })();

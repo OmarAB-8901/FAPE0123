@@ -11,6 +11,7 @@
 					<option value="1">Linea 1</option>
 					<option value="2">Linea 2</option>
 					<option value="3">Linea 3</option>
+					<option value="99">Todas</option>
 					<!-- Obtener informacion de catalogo -->
 				</select>
 			</div>
@@ -20,7 +21,7 @@
 				<select class="form-select bg-white sideSelect" name="" id="sideSelect">
 					<option value="a">Lado A</option>
 					<option value="b">Lado B</option>
-					<option value="z">Ambos</option>
+					<!-- <option value="z">Ambos</option> -->
 				</select>
 			</div>
 
@@ -87,6 +88,9 @@
 
 				<hr style="margin: 1rem 0 1rem 0;">
 
+			</div>
+
+			<div class="additionalSection">
 			</div>
 
 			<div class="row justify-content-end">

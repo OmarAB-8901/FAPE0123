@@ -26,10 +26,10 @@ body.innerHTML = tbody;
          let side = document.querySelector('.sideSelect').value;
          let dataObtained = await fetch(`${dataNodeRedServer.url}/sbl_tags/readTagData?tag=${tagToSend}&line=${line}&side=${side}`).then(json => json.json());
          
-         document.querySelectorAll(`.${elem[1]} td:not(.event)`).forEach((elem, i) => {
+         document.querySelectorAll(`.${elem[1]} td:not(.event):nth-child(4)`).forEach((elem, i) => {
             elem.innerText = dataObtained.data[i];
          });
       });
       
-   }, 20000);
+   }, 5000);
 })();

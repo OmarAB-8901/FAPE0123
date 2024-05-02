@@ -10,8 +10,7 @@
 
         <div class="card-body bg-white">
 
-          <div class="doughnutsCharts"></div>
-          <div><canvas id="chartProduction"></canvas></div>
+          <div><canvas id="chartBarProduction"></canvas></div>
 
         </div>
       </div>
@@ -60,10 +59,9 @@
 @endsection
 
 @section('css_section')
-  <link rel="stylesheet" href="/css/chartjs/main.css"></link>
+  
 @endsection
 
 @section('js_section')
-  <script src="/js/produccion/history.js"></script>
-  <script src="/js/produccion/graphics.js"></script>
+  <script src="/js/produccion/aborto/history.js" type="module"></script>
 @endsection

@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-md-9">
             <div class="card shadow">
-                <div class="card-header">{{ __('Produccion') }}</div>
+                <div class="card-header">{{ __('Historico Calidad') }}</div>
 
                 <div class="card-body bg-white">
 
@@ -25,7 +25,7 @@
     <div class="row mt-3">
         <div class="col-md-9">
             <div class="card shadow abortKgs">
-                <div class="card-header">{{ __('Abortos Kilos') }}</div>
+                <div class="card-header">{{ __('Historico Calidad') }}</div>
 
                 <div class="card-body bg-white hasTable horizontalScroll">
 
