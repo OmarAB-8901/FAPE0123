@@ -176,7 +176,26 @@ export default {
             display: dataSetCharts.enableTitleChart,
             text: dataSetCharts.titleChart
           }
-        }
+        },
+        scales:{
+          // x:{
+          //    title:{
+          //       display:true,
+          //       text:"Month"
+          //    }
+          // },
+          y:{
+             title:{
+                display:true,
+                text:"Kilogramos"
+             },
+            //  min:0,
+            //  max:99999,
+            //  ticks:{
+            //   stepSize: 10
+            //  }
+          }
+       }
       }
     });
     // End
