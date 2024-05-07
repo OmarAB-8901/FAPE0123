@@ -24,7 +24,7 @@ let randomData = () => {
   let data = [];
 
   for(let i=0; i<10; i++){7
-    data.push(( (Math.random() * 900)+1).toFixed() );
+    data.push( ( (Math.random() * 900)+1).toFixed() );
   }
 
   return data;
@@ -52,11 +52,12 @@ let obtainData = async () => {
     case '1':
     case '2':
     case '3':
+
       let data = {
         label: 'Linea ' + dataFilters.line,
         data: randomData(),
-        borderColor: 'rgba(56, 102, 242, 0.6)',
-        backgroundColor: 'rgba(56, 102, 242, 0.5)',
+        borderColor: 'rgba(56, 102, 242, 0.7)',
+        backgroundColor: 'rgba(56, 102, 242, 0.6)',
         borderWidth: 2,
         borderRadius: 5,
         borderSkipped: false,
@@ -69,7 +70,7 @@ let obtainData = async () => {
           label: 'Linea ' + i,
           data: randomData(),
           borderColor: `rgba(${colorsChart[i - 1]}, 0.7)`,
-          backgroundColor: `rgba(${colorsChart[i - 1]}, 0.5)`,
+          backgroundColor: `rgba(${colorsChart[i - 1]}, 0.6)`,
           borderWidth: 2,
           borderRadius: 5,
           borderSkipped: false,
@@ -87,7 +88,12 @@ let initiateChartsProd = async () => {
   // Bar Chart
   dataProject.jsonDataCharts.barChart.type = 'bar';
   dataProject.jsonDataCharts.barChart.enableTitleChart = true;
-  dataProject.jsonDataCharts.barChart.titleChart = 'Abortos Linea ' + (document.querySelector('#sideSelect').value).toUpperCase();
+  dataProject.jsonDataCharts.barChart.titleChart = 'Abortos "Lado ' + (document.querySelector('#sideSelect').value).toUpperCase() + '"';
+  dataProject.jsonDataCharts.barChart.title_x = true;
+  dataProject.jsonDataCharts.barChart.title_x_text = `Tipo de busqueda: "Horas", Rango Busqueda: 00:00 - 01:00`;
+  dataProject.jsonDataCharts.barChart.title_y = true;
+  dataProject.jsonDataCharts.barChart.title_y_text = "Kilogramos";
+  dataProject.jsonDataCharts.barChart.max_scales = 1000;
   dataProject.jsonDataCharts.barChart.labels = labels();
   dataProject.jsonDataCharts.barChart.dataSet = await obtainData();
 
@@ -106,7 +112,6 @@ let updateChart = async () => {
   initiateChartsProd();
 
   document.querySelector('.btn-search').addEventListener('click', async () => {
-
     printTable();
     updateChart();
   });

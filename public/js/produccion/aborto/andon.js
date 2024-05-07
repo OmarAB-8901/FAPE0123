@@ -92,39 +92,22 @@ let initiateChartsProd = async () => {
   // Bar Chart
   dataProject.jsonDataCharts.barChart.type = 'bar';
   dataProject.jsonDataCharts.barChart.enableTitleChart = true;
-  dataProject.jsonDataCharts.barChart.titleChart = 'Abortos Linea ' + (document.querySelector('#sideSelect').value).toUpperCase();
+  dataProject.jsonDataCharts.barChart.titleChart = 'Abortos "lado ' + (document.querySelector('#sideSelect').value).toUpperCase() + '"';
+  dataProject.jsonDataCharts.barChart.title_y = true;
+  dataProject.jsonDataCharts.barChart.title_y_text = "Kilogramos";
+  dataProject.jsonDataCharts.barChart.max_scales = 1000;
   dataProject.jsonDataCharts.barChart.labels = labels();
   dataProject.jsonDataCharts.barChart.dataSet = await obtainData();
 
   dataProject.printBarChart(dataProject.jsonDataCharts.barChart);
-
-  // Doughnut 
-  // dataProject.doughnutCharts.forEach(chart => { chart.destroy(); });
-  // dataProject.jsonDataCharts.doughnutChart.totCharts = 5;
-  // dataProject.jsonDataCharts.doughnutChart.type = 'doughnut';
-  // dataProject.jsonDataCharts.doughnutChart.dataSet = [[90, 10], [90, 10], [90, 10], [90, 10], [90, 10], [90, 10]];
-  // dataProject.jsonDataCharts.doughnutChart.namesDoughnutsChart = ['MTTR', 'MTBF', 'MTTF', 'TX x L1', 'Horas Negras'];
-  // dataProject.jsonDataCharts.doughnutChart.colorsDoughnutsChart = [['rgb(54, 162, 235)', 'rgb(255, 99, 132)'], ['rgb(54, 162, 235)', 'rgb(255, 99, 132)'], ['rgb(54, 162, 235)', 'rgb(255, 99, 132)'], ['rgb(54, 162, 235)', 'rgb(255, 99, 132)'], ['rgb(54, 162, 235)', 'rgb(255, 99, 132)']];
-
-  // dataProject.printDoughnutChart(dataProject.jsonDataCharts.doughnutChart);
 };
 
 let updateChart = async () => {
 
   // Bar Chart
-  // dataProject.jsonDataCharts.barChart.titleChart = 'Abortos Lado ' + (document.querySelector('#sideSelect').value).toUpperCase();
   dataProject.jsonDataCharts.barChart.dataSet = await obtainData();
 
   dataProject.updateBarChart(dataProject.jsonDataCharts.barChart);
-
-  // Doughnut 
-  // dataProject.jsonDataCharts.doughnutChart.totCharts = 5;
-  // dataProject.jsonDataCharts.doughnutChart.type = 'doughnut';
-  // dataProject.jsonDataCharts.doughnutChart.dataSet = [[80, 20], [70, 30], [50, 50], [40, 60], [20, 80], [80, 20]];
-  // dataProject.jsonDataCharts.doughnutChart.namesDoughnutsChart = ['MTTR', 'MTBF', 'MTTF', 'TX x L1', 'Horas Negras'];
-  // dataProject.jsonDataCharts.doughnutChart.colorsDoughnutsChart = [['rgb(54, 162, 235)', 'rgb(255, 99, 132)'], ['rgb(54, 162, 235)', 'rgb(255, 99, 132)'], ['rgb(54, 162, 235)', 'rgb(255, 99, 132)'], ['rgb(54, 162, 235)', 'rgb(255, 99, 132)'], ['rgb(54, 162, 235)', 'rgb(255, 99, 132)']];
-
-  // dataProject.updateDoughnutChart(dataProject.jsonDataCharts.doughnutChart);
 };
 
 (() => {

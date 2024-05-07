@@ -140,12 +140,16 @@ export default {
   barChartJson: null,
   updateBarChart: function(dataUpdateCharts){
 
-    // this.barChartJson.config.options.plugins.title.text = dataUpdateCharts.titleChart;
+   console.log(this.barChartJson.data, dataUpdateCharts);
 
     let dataSets = this.barChartJson.data.datasets;
  
     dataSets.forEach((dataSet, i) => {
       // dataSet.label = dataUpdateCharts.dataSet[i].label;
+      
+      dataSet.backgroundColor = dataUpdateCharts.dataSet[i].backgroundColor;
+      dataSet.borderColor = dataUpdateCharts.dataSet[i].borderColor;
+      
       dataSet.data = dataUpdateCharts.dataSet[i].data;
     });
 
@@ -178,21 +182,34 @@ export default {
           }
         },
         scales:{
-          // x:{
-          //    title:{
-          //       display:true,
-          //       text:"Month"
-          //    }
-          // },
+          x:{
+             title:{
+                display: dataSetCharts.title_x,
+                text: dataSetCharts.title_x_text
+             }
+          },
           y:{
              title:{
-                display:true,
-                text:"Kilogramos"
+                display: dataSetCharts.title_y,
+                text: dataSetCharts.title_y_text
              },
-            //  min:0,
-            //  max:99999,
-            //  ticks:{
-            //   stepSize: 10
+            //  grid: {
+            //   color: function(context) {
+                
+            //     if (context.tick.value > 9)
+            //       return '#11E01E';
+            //     else if (context.tick.value > 5 && context.tick.value <= 9)
+            //       return '#FFF000';
+            //     else if (context.tick.value <= 5) 
+            //       return '#FF0000';
+    
+            //     return '#000000';
+            //   },
+            // },
+             min: dataSetCharts.min_scales,
+             max: dataSetCharts.max_scales,
+            //  ticks: {
+            //   stepSize: 100
             //  }
           }
        }
@@ -222,15 +239,29 @@ export default {
   jsonDataCharts: {
     lineChart: {
       type: '',
+      enableTitleChart: false,
+      titleChart: 'none',
       labels: [],
-      dataSet: []
+      dataSet: [],
+      title_x: false,
+      title_x_text: "",
+      title_y: false,
+      title_y_text: "",
+      min_scales: 0,
+      max_scales: 1000
     },
     barChart: {
       type: '',
       enableTitleChart: false,
       titleChart: 'none',
       labels: [],
-      dataSet: []
+      dataSet: [],
+      title_x: false,
+      title_x_text: "",
+      title_y: false,
+      title_y_text: "",
+      min_scales: 0,
+      max_scales: 1000
     },
     doughnutChart: {
       totCharts: 0,

@@ -6,21 +6,10 @@
     <div class="row justify-content-center">
         <div class="col-md-9">
             <div class="card shadow">
-                <div class="card-header">{{ __('Produccion') }}</div>
+                <div class="card-header">{{ __('Mondini') }}</div>
 
                 <div class="card-body bg-white">
-                    
-
-                    <div class="doughnutsCharts">
-                        <div style="width: 14%;"><canvas id="chartDoughnut_1"></canvas></div>
-                        <div style="width: 14%;"><canvas id="chartDoughnut_2"></canvas></div>
-                        <div style="width: 14%;"><canvas id="chartDoughnut_3"></canvas></div>
-                        <div style="width: 14%;"><canvas id="chartDoughnut_4"></canvas></div>    
-                        <!-- <div style="width: 14%;"><canvas id="chartDoughnut_5"></canvas></div>    
-                        <div style="width: 14%;"><canvas id="chartDoughnut_6"></canvas></div>     -->
-                    </div>
-                    
-                    <div><canvas id="chartProduccion"></canvas></div>
+                    <div><canvas id="chartBarProduction"></canvas></div>
                 </div>
             </div>
         </div>
@@ -162,6 +151,5 @@
 @endsection
 
 @section('js_section')
-    <script src="/js/produccion/mondini/andon.js"></script>
-    <script src="/js/produccion/graphics.js"></script>
+    <script src="/js/produccion/mondini/andon.js" type="module"></script>
 @endsection
