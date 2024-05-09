@@ -60,7 +60,7 @@ export default {
             delay: (context) => {
               let delay = 0;
               if (context.type === 'data' && context.mode === 'default' && !delayed) {
-                delay = context.dataIndex * 600 + context.datasetIndex * 100;
+                delay = context.dataIndex * 400 + context.datasetIndex * 100;
               }
               return delay;
             },
@@ -94,7 +94,6 @@ export default {
     /**
      * Line Chart
      */
-
     if(this.lineChart != null)
       this.lineChart.destroy();
 
@@ -140,8 +139,6 @@ export default {
   barChartJson: null,
   updateBarChart: function(dataUpdateCharts){
 
-   console.log(this.barChartJson.data, dataUpdateCharts);
-
     let dataSets = this.barChartJson.data.datasets;
  
     dataSets.forEach((dataSet, i) => {
@@ -159,7 +156,6 @@ export default {
     /**
      * Bar Chart
      */
-
     if(this.barChartJson != null)
       this.barChartJson.destroy();
 

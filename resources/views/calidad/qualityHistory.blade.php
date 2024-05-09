@@ -11,7 +11,7 @@
                 <div class="card-body bg-white">
 
                     <div class="doughnutsCharts"></div>
-                    <div><canvas id="chartProduction"></canvas></div>
+                    <div><canvas id="chartBarProduction"></canvas></div>
 
                 </div>
             </div>
