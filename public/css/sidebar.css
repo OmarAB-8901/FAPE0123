@@ -57,7 +57,7 @@
 }
 
 .sidebar-content .content .body-sidebar a::before{
-   
+
    content: "\F28A";
    transform: translateY(-50%);
    display: inline;
@@ -66,7 +66,7 @@
 }
 
 .sidebar-content .content .body-sidebar a.selected::before{
-   
+
    /* content: "\F270"; */
    content: "\F26B";
    transform: translateY(-50%);
@@ -76,14 +76,14 @@
 }
 
 .sidebar-content .content:not(.close) .body-sidebar{
-   
+
    position: relative;
    overflow: hidden;
    transition: 0.4s;
 }
 
 .sidebar-content .content.close .body-sidebar{
-  
+
    position: relative;
    height: 0 !important;
    width: 100%;
@@ -92,14 +92,14 @@
 }
 
 .sidebar-content .inner_menu.content:not(.close) .body-sidebar{
-   
+
    position: relative;
-   overflow: hidden;   
+   overflow: hidden;
    transition: 0.4s;
 }
 
 .sidebar-content .inner_menu.content.close .body-sidebar{
-  
+
    position: relative;
    height: 0 !important;
    width: 100%;
@@ -108,7 +108,7 @@
 }
 
 /* .sidebar-content .content:not(.close) .body-sidebar{
-  
+
    overflow-y: scroll;
 } */
 
@@ -159,7 +159,7 @@
 }
 
 .sidebar-content{
-   
+
    border: 1px solid rgb(3, 74, 147, 0.6);
    border-radius: 0.7rem;
    height: 91vh;
@@ -168,12 +168,12 @@
 }
 
 .sidebar-content .content .header-sidebar{
-   
+
    margin-left: -15px;
 }
 
 .sidebar-content .content .inner_menu .header-sidebar{
-   
+
    margin-left: -2.5rem;
    padding: 0 0 0 1.7rem;
 }

@@ -6,7 +6,8 @@
         <div class="header-sidebar-main py-3">
             <!-- <h5 class="justify-content-center pb-0 mb-0">LOGO</h5> -->
             <a href="{{Route('home')}}">
-              <img src="/img/pepsico_transparente.png" alt="" height="75" width="100">
+              <!-- <img src="/img/pepsico_transparente.png" alt="" height="75" width="100"> -->
+              <img src="/img/pepsico_transparente.png" alt="" style="width: 42%;">
             </a>
         </div>
 
@@ -32,7 +33,7 @@
             </div>
 
             <div class="body-sidebar">
-                
+
                 <div class="inner_menu pt-1 content close">
                     <div class="header-sidebar inner_menu">
                         <span class="bi-my_icon">Abortos</span>

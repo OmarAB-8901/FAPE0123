@@ -8,7 +8,7 @@ export default {
     delete: {}
   },
   doughnutCharts: [],
-  updateDoughnutChart: function(dataUpdateCharts){ 
+  updateDoughnutChart: function (dataUpdateCharts) {
 
     this.doughnutCharts.forEach((chart, i) => {
 
@@ -25,7 +25,7 @@ export default {
      * Doughnut Chart
      */
 
-    if(this.doughnutCharts != [])
+    if (this.doughnutCharts != [])
       this.doughnutCharts.forEach(chart => { chart.destroy(); })
 
     let delayed;
@@ -68,7 +68,7 @@ export default {
           responsive: true,
           plugins: {
             legend: { position: 'top' },
-            titleChart: `${dataSetCharts.namesDoughnutsChart[i-1]} ${dataSetCharts.dataSet[i-1][0]}%`,
+            titleChart: `${dataSetCharts.namesDoughnutsChart[i - 1]} ${dataSetCharts.dataSet[i - 1][0]}%`,
             title: {
               display: true,
               text: ctx => ctx.chart.config.options.plugins.titleChart
@@ -80,21 +80,21 @@ export default {
     }
   },
   lineChart: null,
-  updateLineChart: function(dataUpdateCharts){ 
+  updateLineChart: function (dataUpdateCharts) {
 
     let dataSets = this.lineChart.data.datasets;
- 
+
     dataSets.forEach((dataSet, i) => {
       dataSet.data = dataUpdateCharts.dataSet[i].data;
     });
 
-    this.lineChart.update(); 
+    this.lineChart.update();
   },
   printLineChart: function (dataSetCharts) {
     /**
      * Line Chart
      */
-    if(this.lineChart != null)
+    if (this.lineChart != null)
       this.lineChart.destroy();
 
     let delayed;
@@ -137,26 +137,26 @@ export default {
     // End
   },
   barChartJson: null,
-  updateBarChart: function(dataUpdateCharts){
+  updateBarChart: function (dataUpdateCharts) {
 
     let dataSets = this.barChartJson.data.datasets;
- 
+
     dataSets.forEach((dataSet, i) => {
       // dataSet.label = dataUpdateCharts.dataSet[i].label;
-      
+
       dataSet.backgroundColor = dataUpdateCharts.dataSet[i].backgroundColor;
       dataSet.borderColor = dataUpdateCharts.dataSet[i].borderColor;
-      
+
       dataSet.data = dataUpdateCharts.dataSet[i].data;
     });
 
-    this.barChartJson.update(); 
+    this.barChartJson.update();
   },
   printBarChart: function (dataSetCharts) {
     /**
      * Bar Chart
      */
-    if(this.barChartJson != null)
+    if (this.barChartJson != null)
       this.barChartJson.destroy();
 
     let barChart = document.getElementById('chartBarProduction').getContext('2d');
@@ -177,38 +177,38 @@ export default {
             text: dataSetCharts.titleChart
           }
         },
-        scales:{
-          x:{
-             title:{
-                display: dataSetCharts.title_x,
-                text: dataSetCharts.title_x_text
-             }
+        scales: {
+          x: {
+            title: {
+              display: dataSetCharts.title_x,
+              text: dataSetCharts.title_x_text
+            }
           },
-          y:{
-             title:{
-                display: dataSetCharts.title_y,
-                text: dataSetCharts.title_y_text
-             },
+          y: {
+            title: {
+              display: dataSetCharts.title_y,
+              text: dataSetCharts.title_y_text
+            },
             //  grid: {
             //   color: function(context) {
-                
+
             //     if (context.tick.value > 9)
             //       return '#11E01E';
             //     else if (context.tick.value > 5 && context.tick.value <= 9)
             //       return '#FFF000';
-            //     else if (context.tick.value <= 5) 
+            //     else if (context.tick.value <= 5)
             //       return '#FF0000';
-    
+
             //     return '#000000';
             //   },
             // },
-             min: dataSetCharts.min_scales,
-             max: dataSetCharts.max_scales,
+            min: dataSetCharts.min_scales,
+            max: dataSetCharts.max_scales,
             //  ticks: {
             //   stepSize: 100
             //  }
           }
-       }
+        }
       }
     });
     // End
@@ -218,7 +218,7 @@ export default {
 
     charts.forEach(elem => {
 
-      switch(elem){
+      switch (elem) {
 
         case 'doughnut':
           this.printDoughnutChart(this.jsonDataCharts.doughnutChart);

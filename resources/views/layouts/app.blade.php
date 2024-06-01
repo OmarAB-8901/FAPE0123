@@ -15,10 +15,11 @@
         <!-- Fonts -->
         <link rel="dns-prefetch" href="//fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-        
+
         <link rel="stylesheet" href="/css/main.css">
         <link rel="stylesheet" href="/css/sidebar.css">
         <link rel="stylesheet" href="/css/filterModule.css">
+        <link rel="stylesheet" href="/css/loader.css">
 
         @yield('css_section')
 
@@ -26,6 +27,8 @@
         @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     </head>
     <body>
+
+        <span class="loader"></span>
 
         <div id="app">
             <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
@@ -40,7 +43,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <!-- Left Side Of Navbar -->
                         <ul class="navbar-nav me-auto">
-                            
+
                         </ul>
 
                         <!-- Right Side Of Navbar -->
@@ -99,11 +102,11 @@
 
         <!-- <script src="/js/bootstrap/bootstrap_5-3-3.min.js"></script> -->
 
-        <script src="/js/chartjs/main.js"></script>    
+        <script src="/js/chartjs/main.js"></script>
         <script src="/js/main.js"></script>
         <script src="/js/sidebar.js"></script>
         <script src="/js/filterModule.js"></script>
-        
+
         @yield('js_section')
 
     </body>
