@@ -12,7 +12,7 @@ let printTable = () => {
   tbodyTable.forEach(elem => {
 
     tbody += `<tr class="${elem.class}">`;
-    tbody += `<td class="equipo">${elem.event}</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td>`;
+    tbody += `<td class="equipo">${elem.event}</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td>`;
     tbody += "</tr>";
   });
   body.innerHTML = tbody;
@@ -23,8 +23,9 @@ let randomData = () => {
 
   let data = [];
 
-  for(let i=0; i<10; i++){7
-    data.push( ( (Math.random() * 900)+1).toFixed() );
+  for (let i = 0; i < 10; i++) {
+    7
+    data.push(((Math.random() * 900) + 1).toFixed());
   }
 
   return data;
@@ -99,7 +100,7 @@ let initiateChartsProd = async () => {
 
   dataProject.printBarChart(dataProject.jsonDataCharts.barChart);
 
-  // Doughnut 
+  // Doughnut
   dataProject.jsonDataCharts.doughnutChart.totCharts = 5;
   dataProject.jsonDataCharts.doughnutChart.type = 'doughnut';
   dataProject.jsonDataCharts.doughnutChart.dataSet = [[80, 20], [70, 30], [50, 50], [40, 60], [20, 80], [80, 20]];
@@ -115,7 +116,7 @@ let updateChart = async () => {
   dataProject.jsonDataCharts.barChart.dataSet = await obtainData();
   dataProject.updateBarChart(dataProject.jsonDataCharts.barChart);
 
-  // Doughnut 
+  // Doughnut
   dataProject.jsonDataCharts.doughnutChart.dataSet = [[50, 50], [70, 30], [50, 50], [40, 60], [80, 20], [90, 10]];
 
   dataProject.updateDoughnutChart(dataProject.jsonDataCharts.doughnutChart);

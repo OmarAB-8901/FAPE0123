@@ -28,8 +28,7 @@ let randomData = () => {
   let data = [];
 
   for (let i = 0; i < 10; i++) {
-    7
-    data.push( ((Math.random() * 12) + 1).toFixed() );
+    data.push( ((Math.random() * 110) + 1).toFixed() );
   }
 
   return data;
@@ -64,13 +63,13 @@ let obtainData = async () => {
 
       auxData.forEach(elem => {
 
-         if(elem > 10){
+         if(elem > 100){
             barBGColor.push('rgba(49, 230, 0, 0.8)');
             barBDRColor.push('rgba(49, 230, 0, 1)');
-         } else if(elem <= 10 && elem > 6){
+         } else if(elem <= 100 && elem > 60){
             barBGColor.push('rgba(228, 235, 1, 0.8)');
             barBDRColor.push('rgba(228, 235, 1, 1)');
-         } else if(elem <= 6){
+         } else if(elem <= 60){
             barBGColor.push('rgba(255, 0, 0, 0.8)');
             barBDRColor.push('rgba(255, 0, 0, 1)');
          }
@@ -114,9 +113,11 @@ let initiateChartsProd = async () => {
   dataProject.jsonDataCharts.barChart.titleChart = 'Abortos "lado ' + (document.querySelector('#sideSelect').value).toUpperCase() + '"';
   dataProject.jsonDataCharts.barChart.title_y = true;
   dataProject.jsonDataCharts.barChart.title_y_text = "Ciclos X minuto";
-  dataProject.jsonDataCharts.barChart.max_scales = 15;
+  dataProject.jsonDataCharts.barChart.max_scales = 120;
   dataProject.jsonDataCharts.barChart.labels = labels();
   dataProject.jsonDataCharts.barChart.dataSet = await obtainData();
+  dataProject.jsonDataCharts.barChart.enableLimits = true;
+  dataProject.jsonDataCharts.barChart.valuesLimits = [60, 100];
 
   dataProject.printBarChart(dataProject.jsonDataCharts.barChart);
 };
@@ -166,7 +167,7 @@ let updateChart = async () => {
       updateChart();
     }, timeOfRefresh);
   });
-  
+
   document.querySelector('#sideSelect').addEventListener('change', () => {
 
     clearInterval(intervalTimer);

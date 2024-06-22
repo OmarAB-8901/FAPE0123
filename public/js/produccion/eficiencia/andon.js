@@ -94,7 +94,7 @@ let initiateChartsProd = async () => {
   dataProject.jsonDataCharts.barChart.enableTitleChart = true;
   dataProject.jsonDataCharts.barChart.titleChart = 'Eficiencia "lado ' + (document.querySelector('#sideSelect').value).toUpperCase() + '"';
   dataProject.jsonDataCharts.barChart.title_y = true;
-  dataProject.jsonDataCharts.barChart.title_y_text = "Kilogramos";
+  dataProject.jsonDataCharts.barChart.title_y_text = "Velocidad";
   dataProject.jsonDataCharts.barChart.max_scales = 1000;
   dataProject.jsonDataCharts.barChart.labels = labels();
   dataProject.jsonDataCharts.barChart.dataSet = await obtainData();
@@ -147,7 +147,7 @@ let updateChart = async () => {
       updateChart();
     }, timeOfRefresh);
   });
-  
+
   document.querySelector('#sideSelect').addEventListener('change', () => {
 
     clearInterval(intervalTimer);

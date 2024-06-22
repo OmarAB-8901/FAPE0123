@@ -189,19 +189,18 @@ export default {
               display: dataSetCharts.title_y,
               text: dataSetCharts.title_y_text
             },
-            //  grid: {
-            //   color: function(context) {
+             grid: {
+              color: function(context) {
 
-            //     if (context.tick.value > 9)
-            //       return '#11E01E';
-            //     else if (context.tick.value > 5 && context.tick.value <= 9)
-            //       return '#FFF000';
-            //     else if (context.tick.value <= 5)
-            //       return '#FF0000';
+                if(dataSetCharts.enableLimits){
 
-            //     return '#000000';
-            //   },
-            // },
+                    if(context.tick.value == dataSetCharts.valuesLimits[0] || context.tick.value == dataSetCharts.valuesLimits[1])
+                        return '#FF0000';
+                }
+
+                return '#cecdcd';
+              },
+            },
             min: dataSetCharts.min_scales,
             max: dataSetCharts.max_scales,
             //  ticks: {
@@ -244,7 +243,9 @@ export default {
       title_y: false,
       title_y_text: "",
       min_scales: 0,
-      max_scales: 1000
+      max_scales: 1000,
+      enableLimits: false,
+      valuesLimits: []
     },
     barChart: {
       type: '',
@@ -257,7 +258,9 @@ export default {
       title_y: false,
       title_y_text: "",
       min_scales: 0,
-      max_scales: 1000
+      max_scales: 1000,
+      enableLimits: false,
+      valuesLimits: []
     },
     doughnutChart: {
       totCharts: 0,

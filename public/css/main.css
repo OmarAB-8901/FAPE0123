@@ -127,3 +127,23 @@ table tbody tr td {
 .btn-outline-info.btn-sm:hover{
    color: #fff;
 }
+
+.dropdown-menu{
+    width: 14rem;
+
+    a{
+        display: flex !important;
+        gap: 0.5rem;
+        margin-top: 0.25rem;
+    }
+
+    :hover{
+        background-color: rgba(3, 74, 147, 0.3) !important;
+    }
+}
+
+body #app .row .col-md-10.spinner.noDisplay,
+body #app .row .col-md-10.mainContent.noDisplay{
+
+    display: none !important;
+}

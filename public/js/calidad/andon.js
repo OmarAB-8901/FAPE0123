@@ -47,9 +47,10 @@ body.innerHTML = tbody;
       let dataObtained = await fetch(`${dataNodeRedServer.url}/sbl_tags/readTagData?data=${JSON.stringify(dataToRead)}`).then(json => json.json());
 
       document.querySelectorAll(`.${elem[1]} td:not(.event):nth-child(4)`).forEach((elem, i) => {
-        elem.innerText = dataObtained.data;
+
+        elem.innerText = (dataObtained.data).toString().toUpperCase();
       });
     });
 
-  }, 5000);
+  }, 3000);
 })();

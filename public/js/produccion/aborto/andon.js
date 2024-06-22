@@ -1,13 +1,62 @@
-import dataMaintenance from "./tagsAborto.js";
+import dataAbort from "./tagsAborto.js";
 import dataProject from "../../dataProject.js";
 
 dataProject.initCharts('bar');
 
 let intervalTimer;
-let timeOfRefresh = 5000;
+let timeOfRefresh = 2000;
+let avgKgsAbort = 1.225;
 
-let tagsToObtainMaintenanceData = dataMaintenance.tags;
-let tbodyTable = dataMaintenance.dataTable;
+let tagsToObtainAbortData = dataAbort.tags;
+let tbodyTable = dataAbort.dataTable;
+
+let addFilterAndonAbort = () => {
+
+    let additionalSection = document.querySelector('.additionalSection');
+
+    let row = document.createElement('div');
+    row.classList = 'row';
+
+    let colMD1 = document.createElement('div');
+    colMD1.classList = "col-md-6";
+    let labelSlctTiempo = document.createElement('label');
+    labelSlctTiempo.textContent = "Tiempo de muestra";
+    let selectTiempo = document.createElement('select');
+    selectTiempo.classList = 'form-select bg-white slctTiempo'
+    colMD1.appendChild(labelSlctTiempo);
+    colMD1.appendChild(selectTiempo);
+
+    /* let colMD2 = document.createElement('div');
+    colMD2.classList = "col-md-6";
+    let labelSlctCarril = document.createElement('label');
+    labelSlctCarril.textContent = "Seleccione un carril";
+    let selectCarril = document.createElement('select');
+    selectCarril.classList = 'form-select bg-white slctCarriles';
+    colMD2.appendChild(labelSlctCarril);
+    colMD2.appendChild(selectCarril); */
+
+    row.appendChild(colMD1);
+    // row.appendChild(colMD2);
+    additionalSection.appendChild(row);
+
+    // let options = '';
+    // for(let i=1; i<=10; i++)
+    //     options += `<option value="${i}">Carril ${i}</option>`;
+
+    // document.querySelector('.slctCarriles').innerHTML = options;
+
+    let options = '<option value="segundos">Segundos</option>';
+    options += '<option value="Minutos">Minutos</option>';
+    // options += '<option value="Hora">Hora</option>';
+    document.querySelector('.slctTiempo').innerHTML = options;
+
+    let hr = document.createElement('hr');
+    hr.style = "margin: 1rem 0 1rem 0;";
+
+    additionalSection.after(hr);
+};
+
+addFilterAndonAbort();
 
 let printTable = () => {
 
@@ -16,7 +65,9 @@ let printTable = () => {
   tbodyTable.forEach(elem => {
 
     tbody += `<tr class="${elem.class}">`;
-    tbody += `<td class="equipo">${elem.equipo}</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td>`;
+    tbody += `<td class="linea">${elem.line }</td> <td>0</td>`;
+    for(let i=0; i<10; i++)
+        tbody += "<td>-</td>";
     tbody += "</tr>";
   });
   body.innerHTML = tbody;
@@ -27,8 +78,7 @@ let randomData = () => {
 
   let data = [];
 
-  for (let i = 0; i < 10; i++) {
-    7
+  for (let i = 0; i < 60; i++) {
     data.push((Math.random() * 800) + 1);
   }
 
@@ -50,7 +100,7 @@ let obtainData = async () => {
     },
   };
 
-  // let dataConsulted = await fetch(`/maintenance/obtaindatahistory?filters=${JSON.stringify(dataFilters)}`).then(json => json.json()).then(data => data);
+//   let dataConsulted = await fetch(`/maintenance/obtaindatahistory?filters=${JSON.stringify(dataFilters)}`).then(json => json.json()).then(data => data);
 
   let dataForChart = [];
   switch (dataFilters.line) {
@@ -87,10 +137,10 @@ let obtainData = async () => {
 
 let initiateChartsProd = async () => {
 
-  let labels = () => { let labels = []; for (let i = 1; i <= 10; i++) { labels.push(`Carril ${i}`); } return labels; };
+  let labels = () => { let labels = []; for (let i = 0; i < 60; i++) { labels.push(`${i}`); } return labels; };
 
   // Bar Chart
-  dataProject.jsonDataCharts.barChart.type = 'bar';
+  dataProject.jsonDataCharts.barChart.type = 'line';
   dataProject.jsonDataCharts.barChart.enableTitleChart = true;
   dataProject.jsonDataCharts.barChart.titleChart = 'Abortos "lado ' + (document.querySelector('#sideSelect').value).toUpperCase() + '"';
   dataProject.jsonDataCharts.barChart.title_y = true;
@@ -121,12 +171,14 @@ let updateChart = async () => {
 
   setInterval(() => {
 
-    tagsToObtainMaintenanceData.forEach(async elem => {
+    tagsToObtainAbortData.forEach(async elem => {
 
       let tagToSend = (elem[0].tag).toString();
-      let line = document.querySelector('.lineSelect').value;
-      let side = document.querySelector('.sideSelect').value;
-      let dataObtained = await fetch(`${dataProject.url}/sbl_tags/readTagData?tag=${tagToSend}&line=${line}&side=${side}`).then(json => json.json());
+    //   let line = document.querySelector('.lineSelect').value;
+    //   let side = document.querySelector('.sideSelect').value;
+    //   let dataObtained = await fetch(`${dataProject.url}/sbl_tags/readTagData?tag=${tagToSend}&line=${line}&side=${side}`).then(json => json.json());
+
+    let dataObtained = await fetch(`${dataProject.url}/sbl_tags/readTagData?tag=${tagToSend}`).then(json => json.json());
 
       document.querySelectorAll(`.${elem[1]} td:not(.equipo)`).forEach((elem, i) => {
         elem.innerText = dataObtained.data[i];
@@ -147,7 +199,7 @@ let updateChart = async () => {
       updateChart();
     }, timeOfRefresh);
   });
-  
+
   document.querySelector('#sideSelect').addEventListener('change', () => {
 
     clearInterval(intervalTimer);

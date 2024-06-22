@@ -19,6 +19,7 @@
                 <h6 class="py-3 mb-0 ps-3 bi-my_icon">Calidad</h6>
             </div>
 
+            <!-- <div class="body-sidebar" style="height: 3.5vh;"> -->
             <div class="body-sidebar">
                 <a href="{{ Route('index_quality') }}" class="py-1 bi-my_icon">Andon</a>
                 <a href="{{ Route('graphic_quality') }}" class="py-1 bi-my_icon">Historico</a>

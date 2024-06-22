@@ -9,9 +9,6 @@
 				<label for="lineSelect">Seleccione una linea</label>
 				<select name="" id="lineSelect" class="form-select bg-white lineSelect">
 					<option value="1">Linea 1</option>
-					<option value="2">Linea 2</option>
-					<option value="3">Linea 3</option>
-					<option value="99">Todas</option>
 					<!-- Obtener informacion de catalogo -->
 				</select>
 			</div>
@@ -30,7 +27,7 @@
 			<div class="modulesFilterHistory">
 				<div class="row">
 					<div class="col-md-12">
-						<h6>Buscar por:</h6>		
+						<h6>Buscar por:</h6>
 					</div>
 				</div>
 

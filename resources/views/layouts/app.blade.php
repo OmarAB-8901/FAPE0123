@@ -9,6 +9,8 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
+        <link rel="shortcut icon" href="/img/icons/favicon-pepsico.png" type="image/x-icon">
+
         <link rel="stylesheet" href="/css/bootstrap/bootstrapIcons.css">
         <link rel="stylesheet" href="/css/bootstrap/bootstrap_5-3-3.min.css">
 
@@ -27,8 +29,6 @@
         @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     </head>
     <body>
-
-        <span class="loader"></span>
 
         <div id="app">
             <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
@@ -63,14 +63,21 @@
                                 @endif -->
                             <!-- @else -->
                                 <li class="nav-item dropdown">
-                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="padding: 0; display: flex; gap: 0.25rem; align-items: center;">
+                                        <i class="bi bi-person-circle" style="margin-right: 0.25rem; font-size: 23px"></i>
                                         {{ Auth::user()->name }}
                                     </a>
 
-                                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
+                                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown" style="width: 100%;">
+                                        <a class="dropdown-item exit" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                            <i class="bi bi-box-arrow-left"></i>
+                                            {{ __('Cerrar Sesión') }}
                                         </a>
+
+                                        <!-- <a class="dropdown-item" href="{{ route('home') }}">
+                                            <i class="bi bi-gear"></i>
+                                            {{ __('Configuración') }}
+                                        </a> -->
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                             @csrf
@@ -93,10 +100,13 @@
                 </div>
 
                 <div class="col-md-10 mainContent">
+
                     <main class="py-4">
                         @yield('content')
                     </main>
                 </div>
+
+                <div class="col-md-10 spinner noDisplay" style="display: flex; justify-content: center; align-items: center;"><div class="spinner-border text-primary" role="status" style="font-size: 20px; width: 10rem; height: 10rem;"></div></div>
             </div>
         </div>
 
