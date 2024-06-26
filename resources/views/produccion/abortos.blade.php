@@ -36,16 +36,16 @@
                                 <!-- Lado B -->
                                 <th>Linea</th>
                                 <th>Aborto Kgs</th>
-                                <th>Carril 1</th>
-                                <th>Carril 2</th>
-                                <th>Carril 3</th>
-                                <th>Carril 4</th>
-                                <th>Carril 5</th>
-                                <th>Carril 6</th>
-                                <th>Carril 7</th>
-                                <th>Carril 8</th>
-                                <th>Carril 9</th>
-                                <th>Carril 10</th>
+                                <th>Carril <span class="nLine"></span></th>
+                                <th>Carril <span class="nLine"></span></th>
+                                <th>Carril <span class="nLine"></span></th>
+                                <th>Carril <span class="nLine"></span></th>
+                                <th>Carril <span class="nLine"></span></th>
+                                <th>Carril <span class="nLine"></span></th>
+                                <th>Carril <span class="nLine"></span></th>
+                                <th>Carril <span class="nLine"></span></th>
+                                <th>Carril <span class="nLine"></span></th>
+                                <th>Carril <span class="nLine"></span></th>
                             </tr>
                         </thead>
                         <tbody class="table-group-divider">
