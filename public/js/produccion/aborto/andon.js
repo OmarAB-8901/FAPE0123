@@ -5,7 +5,7 @@ dataNodeRedServer.initCharts('bar');
 
 let intervalTimer;
 let timeOfRefresh = 20;
-let avgKgsAbortPerSecond = 20.750;
+let avgKgsAbortPerSecond = 0.02075;
 
 let tagsToObtainAbortData = dataAbort.tags;
 let tbodyTable = dataAbort.dataTable;
@@ -218,9 +218,17 @@ let checkCarriles = () => {
           elem[0].kgAbort += (avgKgsAbortPerSecond * timeOfRefresh);
         }
 
-        document.querySelector(`.tableAbortKgs tbody .${elemTable.class} .${elemTable.class}_sensor_${(j + 1)}`).innerText = elem[0].kgAbort;
+        document.querySelector(`.tableAbortKgs tbody .${elemTable.class} .${elemTable.class}_sensor_${(j + 1)}`).innerText = (elem[0].kgAbort).toFixed(3);
 
         updateChart();
+
+        /**
+         * Faltantes:
+         * 1.- Hay que sumar los kilogramos para el total de aborto por linea
+         * 2.- Hay que realizar el calculo para que los abortos se vean refeljado en la grafica
+         * 3.- El calcuilo se debe de hacer por segundo y minutos
+         * 4.- pendiente la pedida del vuelo, los examenes medicos, ver lo del curso de ingreso, y los materiales necesarios para el ingreso a la planta
+         */
       });
     });
 
